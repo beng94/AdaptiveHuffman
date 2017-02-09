@@ -46,11 +46,30 @@ void Huffman::incrementNode(Node* node) {
     }
 }
 
+Node* getNytNode() {
+    // TODO: implement
+    return new Node(nullptr, Data(1, 'a'));
+}
+
+Node* insertNewNode(char c) {
+    Node* nytNode = getNytNode();
+
+    Data nytData(nytNode->getData().order - 2, 0x0);
+    Node* newNytNode = new Node(nytNode, nytData);
+    nytNode->setLeftChild(newNytNode);
+
+    Data data(nytNode->getData().order - 1, c);
+    Node* newSymbolNode = new Node(nytNode, data);
+    nytNode->setRightChild(newSymbolNode);
+
+    return newSymbolNode;
+}
+
 void Huffman::symbolReceived(char c) {
     Node* symbolNode = findSymbol(c);
     if(!symbolNode) {
-        // TODO: insert NYT
-    } else {
-        incrementNode(symbolNode);
+        symbolNode = insertNewNode(c);
     }
+
+    incrementNode(symbolNode);
 }
