@@ -10,6 +10,8 @@ class Node {
         bool isLeftChild(Node*);
 
     public:
+        Node(Node*, Data);
+
         Data& getData();
         Node* getParent();
         Node* getLeftChild();

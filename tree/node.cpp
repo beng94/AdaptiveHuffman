@@ -1,5 +1,8 @@
 #include "node.hpp"
 
+Node::Node(Node* parent, Data data) :
+    parent{parent}, left_child{nullptr}, right_child{nullptr}, data{data}
+{}
 
 Node* Node::getParent() {
     return parent;
