@@ -12,7 +12,7 @@ Node* Huffman::findSymbol(char c) {
 }
 
 Node* Huffman::findBlockLeader(int weight) {
-    Node* leaderNode = nytNode;
+    Node* leaderNode = codeTree.getRoot();
     codeTree.traverseTree([&leaderNode, weight](Node* node) {
             Data data = node->getData();
             if(data.weight == weight &&
@@ -46,12 +46,20 @@ void Huffman::incrementNode(Node* node) {
     }
 }
 
-Node* getNytNode() {
-    // TODO: implement
-    return new Node(nullptr, Data(1, 'a'));
+Node* Huffman::getNytNode() {
+    Node* nytNode = codeTree.getRoot();
+    codeTree.traverseTree([&nytNode](Node* node) {
+            if(node->getData().code == 0x0 &&
+               node->getLeftChild() == nullptr) {
+                nytNode = node;
+            }
+        }
+    );
+
+    return nytNode;
 }
 
-Node* insertNewNode(char c) {
+Node* Huffman::insertNewNode(char c) {
     Node* nytNode = getNytNode();
 
     Data nytData(nytNode->getData().order - 2, 0x0);

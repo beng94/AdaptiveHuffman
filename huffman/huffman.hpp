@@ -12,5 +12,7 @@ class Huffman {
         Node* findBlockLeader(int);
         void swapNodes(Node*, Node*);
         void incrementNode(Node*);
+        Node* getNytNode();
+        Node* insertNewNode(char);
         void symbolReceived(char);
 };
