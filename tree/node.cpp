@@ -35,3 +35,11 @@ void Node::swap(Node* node) {
 Data& Node::getData() {
     return data;
 }
+
+void Node::setLeftChild(Node* node) {
+    left_child = node;
+}
+
+void Node::setRightChild(Node* node) {
+    right_child = node;
+}
