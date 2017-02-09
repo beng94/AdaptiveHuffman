@@ -5,6 +5,10 @@ Node* BinaryTree::blockLeader() {
 
 }
 
+Node* BinaryTree::getRoot() {
+    return root;
+}
+
 void BinaryTree::traverseTree(std::function<void(Node*)> func) {
     traverseHelper(root, func);
 }

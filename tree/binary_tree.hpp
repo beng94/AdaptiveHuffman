@@ -7,6 +7,7 @@ class BinaryTree {
     public:
         Node* blockLeader();
         void traverseTree(std::function<void(Node*)>);
+        Node* getRoot();
 
     private:
         Node* root;
