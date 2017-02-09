@@ -3,4 +3,5 @@ all:
 		-g io/input_reader.cpp  \
 		huffman/huffman.cpp huffman/huffman_encoder.cpp huffman/huffman_decoder.cpp \
 		tree/binary_tree.cpp tree/node.cpp tree/nyt_node.cpp \
+		data/data.cpp \
 		main.cpp -o build/OUT
