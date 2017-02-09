@@ -2,7 +2,7 @@
 
 
 HuffmanEncoder::HuffmanEncoder(std::string in, std::string out) :
-    inputReader{in}, outputFile{out, std::ios::binary | std::ios::out}
+    inputReader{in}, binaryWriter{out}
 {}
 
 void HuffmanEncoder::encode() {
@@ -19,7 +19,7 @@ void HuffmanEncoder::encode() {
         writeCode(huffmanCode);
     }
 
-    // TODO: outBinaryWriter.end
+    binaryWriter.end();
 }
 
 std::list<int> HuffmanEncoder::findRootPath(Node* node) {
@@ -38,8 +38,8 @@ std::list<int> HuffmanEncoder::findRootPath(Node* node) {
 }
 
 void HuffmanEncoder::writeCode(const std::list<int>& code) {
-    for(int c: code) {
-
+    for(int bit: code) {
+        binaryWriter.write(bit);
     }
 }
 

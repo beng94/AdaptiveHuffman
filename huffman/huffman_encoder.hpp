@@ -1,5 +1,6 @@
 #include "huffman.hpp"
 #include "../io/char_reader.hpp"
+#include "../io/binary_writer.hpp"
 
 #include <string>
 #include <fstream>
@@ -12,7 +13,7 @@ class HuffmanEncoder : public Huffman {
 
     private:
         CharReader inputReader;
-        std::ofstream outputFile;
+        BinaryWriter binaryWriter;
 
         std::list<int> findRootPath(Node*);
         void writeCode(const std::list<int>&);
