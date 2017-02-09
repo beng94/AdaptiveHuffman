@@ -73,11 +73,13 @@ Node* Huffman::insertNewNode(char c) {
     return newSymbolNode;
 }
 
-void Huffman::symbolReceived(char c) {
+Node* Huffman::symbolReceived(char c) {
     Node* symbolNode = findSymbol(c);
     if(!symbolNode) {
         symbolNode = insertNewNode(c);
     }
 
     incrementNode(symbolNode);
+
+    return symbolNode;
 }

@@ -4,15 +4,16 @@ class Huffman {
 
     public:
 
-    private:
+    protected:
         BinaryTree codeTree;
-        Node* nytNode;
 
+        Node* symbolReceived(char);
+
+    private:
         Node* findSymbol(char);
         Node* findBlockLeader(int);
         void swapNodes(Node*, Node*);
         void incrementNode(Node*);
         Node* getNytNode();
         Node* insertNewNode(char);
-        void symbolReceived(char);
 };
