@@ -1,10 +1,8 @@
+#include "../data/data.hpp"
 
 
 class Node {
     private:
-        int number;
-        int weight;
-        char code;
         Node* left_child;
         Node* right_child;
 
