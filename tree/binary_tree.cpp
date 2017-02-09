@@ -1,10 +1,6 @@
 #include "binary_tree.hpp"
 
 
-Node* BinaryTree::blockLeader() {
-
-}
-
 Node* BinaryTree::getRoot() {
     return root;
 }
