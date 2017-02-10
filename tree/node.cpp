@@ -28,6 +28,12 @@ void Node::swap(Node* node) {
         parent->right_child = node;
     }
 
+    if(node->parent->left_child == node) {
+        node->parent->left_child = this;
+    } else {
+        node->parent->right_child = this;
+    }
+
     Node* tmpParent = parent;
     parent = node->parent;
     node->parent = tmpParent;
