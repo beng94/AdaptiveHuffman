@@ -34,8 +34,8 @@ void Huffman::swapNodes(Node* a, Node* b) {
     Data& dataA = a->getData();
     Data& dataB = b->getData();
 
-    std::cout << "swap: " << dataA.order << ": '" << dataA.code << "' ";
-    std::cout << dataB.order << ": '" << dataB.code << "' ";
+    std::cout << "swap: " << dataA.order << ": '" << dataA.code << "' " << dataA.weight << " ";
+    std::cout << dataB.order << ": '" << dataB.code << "' " << dataB.weight << " ";
 
     int tmpOrder = dataA.order;
     dataA.order = dataB.order;
