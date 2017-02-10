@@ -7,6 +7,7 @@ class BinaryReader {
         ~BinaryReader();
 		bool end();
 		int read();
+        char readChar();
 
     private:
         std::ifstream file;

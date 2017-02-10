@@ -30,3 +30,14 @@ int BinaryReader::read() {
 
     return bit;
 }
+
+
+char BinaryReader::readChar() {
+    char c = 0x0;
+    for(int i = 7; i >= 0; i--) {
+        int bit = read();
+        c |= (bit << i);
+    }
+
+    return c;
+}
