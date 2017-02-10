@@ -7,7 +7,7 @@ HuffmanEncoder::HuffmanEncoder(std::string in, std::string out) :
 
 void HuffmanEncoder::encode() {
     char c;
-    while((c = inputReader.read()) != EOF) {
+    while((c = inputReader.read()) && c != EOF) {
         Node* node = symbolReceived(c);
         std::list<int> huffmanCode = findRootPath(node);
 
