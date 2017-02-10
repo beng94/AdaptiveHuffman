@@ -1,7 +1,9 @@
 #include "binary_writer.hpp"
 
+#include <iostream>
+
 BinaryWriter::BinaryWriter(std::string fileName) :
-    file{fileName}, cnt{7}
+    file{fileName}, cnt{7}, currentChar{0x0}
 {}
 
 BinaryWriter::~BinaryWriter() {
@@ -10,11 +12,13 @@ BinaryWriter::~BinaryWriter() {
 }
 
 void BinaryWriter::write(int bit) {
-    currentChar |= (1 << cnt);
+    currentChar |= (bit << cnt);
     cnt--;
 
     if(cnt < 0) {
+        file.put(currentChar);
         cnt = 7;
+        currentChar = 0x0;
     }
 }
 
