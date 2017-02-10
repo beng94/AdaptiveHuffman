@@ -1,3 +1,6 @@
+#ifndef HUFFMAN_DATA_H
+#define HUFFMAN_DATA_H
+
 class Data {
     public:
         int order;
@@ -7,3 +10,5 @@ class Data {
         Data();
         Data(int, char);
 };
+
+#endif
