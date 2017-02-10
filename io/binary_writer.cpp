@@ -24,4 +24,5 @@ void BinaryWriter::write(int bit) {
 
 void BinaryWriter::end() {
     file.put(currentChar);
+    file.close();
 }
