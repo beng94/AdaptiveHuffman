@@ -1,5 +1,7 @@
 #include "binary_reader.hpp"
 
+#include <iostream>
+
 BinaryReader::BinaryReader(std::string fileName) :
     file{fileName, std::ios::binary | std::ios::in}, bitIndex{7} {
         file.get(currentChar);
@@ -22,6 +24,7 @@ void BinaryReader::readNextChar() {
 /* Returns 0 or 1 according to the next bit in the file. */
 int BinaryReader::read() {
     int bit = (currentChar >> bitIndex) & 1;
+    std::cout << bit;
     bitIndex--;
 
     if(bitIndex < 0) {
