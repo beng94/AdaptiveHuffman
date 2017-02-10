@@ -1,5 +1,7 @@
 #include "huffman_encoder.hpp"
 
+#include <iostream>
+
 
 HuffmanEncoder::HuffmanEncoder(std::string in, std::string out) :
     inputReader{in}, binaryWriter{out}
@@ -8,6 +10,7 @@ HuffmanEncoder::HuffmanEncoder(std::string in, std::string out) :
 void HuffmanEncoder::encode() {
     char c;
     while((c = inputReader.read()) && c != EOF) {
+        std::cout << c << " ";
         Node* node = symbolReceived(c);
         std::list<int> huffmanCode = findRootPath(node);
 
@@ -40,12 +43,15 @@ std::list<int> HuffmanEncoder::findRootPath(Node* node) {
 void HuffmanEncoder::writeCode(const std::list<int>& code) {
     for(int bit: code) {
         binaryWriter.write(bit);
+        std::cout << bit;
     }
+    std::cout << std::endl;
 }
 
 void HuffmanEncoder::appendCharToCode(std::list<int>& code, char c) {
     for(int i = 7; i >= 0; i--) {
         int bit = (c >> i) & 1;
         code.push_back(bit);
+
     }
 }
