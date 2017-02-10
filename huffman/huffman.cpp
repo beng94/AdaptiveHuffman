@@ -39,7 +39,7 @@ void Huffman::swapNodes(Node* a, Node* b) {
 
 void Huffman::incrementNode(Node* node) {
     Node* leaderNode = findBlockLeader(node->getData().weight);
-    if(leaderNode != node) {
+    if(leaderNode != node && node->getParent() != leaderNode) {
         swapNodes(node, leaderNode);
     }
     node->getData().weight++;
