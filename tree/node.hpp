@@ -1,3 +1,6 @@
+#ifndef HUFFMAN_NODE_H
+#define HUFFMAN_NODE_H
+
 #include "../data/data.hpp"
 
 class Node {
@@ -21,3 +24,5 @@ class Node {
         void setRightChild(Node*);
         void swap(Node*);
 };
+
+#endif
