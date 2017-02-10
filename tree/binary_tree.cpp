@@ -1,6 +1,11 @@
 #include "binary_tree.hpp"
 
 
+BinaryTree::BinaryTree()
+{
+    root = new Node;
+}
+
 Node* BinaryTree::getRoot() {
     return root;
 }

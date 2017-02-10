@@ -5,6 +5,8 @@
 class BinaryTree {
 
     public:
+        BinaryTree();
+
         void traverseTree(std::function<void(Node*)>);
         Node* getRoot();
 
