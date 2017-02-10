@@ -35,6 +35,8 @@ void Huffman::swapNodes(Node* a, Node* b) {
     int tmpOrder = dataA.order;
     dataA.order = dataB.order;
     dataB.order = tmpOrder;
+
+    a->swap(b);
 }
 
 void Huffman::incrementNode(Node* node) {
