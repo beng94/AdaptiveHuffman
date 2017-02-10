@@ -1,5 +1,8 @@
 #include "huffman.hpp"
 
+Huffman::Huffman() :
+    codeTree{}
+{}
 
 Node* Huffman::findSymbol(char c) {
     Node* symbolNode = NULL;

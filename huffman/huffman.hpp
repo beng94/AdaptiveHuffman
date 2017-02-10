@@ -3,6 +3,7 @@
 class Huffman {
 
     public:
+        Huffman();
 
     protected:
         BinaryTree codeTree;
