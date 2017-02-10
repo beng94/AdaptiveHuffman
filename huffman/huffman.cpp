@@ -15,15 +15,16 @@ Node* Huffman::findSymbol(char c) {
 }
 
 Node* Huffman::findBlockLeader(int weight) {
-    Node* leaderNode = codeTree.getRoot();
+    Node* leaderNode = getNytNode();
     codeTree.traverseTree([&leaderNode, weight](Node* node) {
             Data data = node->getData();
-            if(data.weight == weight &&
-               data.order > leaderNode->getData().order) {
+            if((data.weight == weight) &&
+               (data.order > leaderNode->getData().order)) {
                 leaderNode = node;
             }
         }
     );
+    return leaderNode;
 }
 
 
