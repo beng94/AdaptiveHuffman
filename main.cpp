@@ -1,14 +1,12 @@
 #include "huffman/huffman_encoder.hpp"
-#include "io/input_reader.hpp"
+#include "huffman/huffman_decoder.hpp"
 
 #include <iostream>
 
 int main() {
-    HuffmanEncoder encoder("test.txt", "out.txt");
+    HuffmanEncoder encoder("test.txt", "encoded.txt");
     encoder.encode(); // TODO: It should return a string
 
-    InputReader i("out.txt");
-    while(!i.end()) {
-        std::cout << i.nextBit();
-    }
+    HuffmanDecoder decoder("encoded.txt", "decoded.txt");
+    decoder.decode();
 }
