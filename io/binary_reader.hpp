@@ -1,12 +1,12 @@
 #include <string>
 #include <fstream>
 
-class InputReader {
+class BinaryReader {
 	public:
-		InputReader(std::string);
-        ~InputReader();
+		BinaryReader(std::string);
+        ~BinaryReader();
 		bool end();
-		int nextBit();
+		int read();
 
     private:
         std::ifstream file;

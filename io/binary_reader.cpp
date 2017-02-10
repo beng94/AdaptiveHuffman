@@ -1,26 +1,26 @@
-#include "input_reader.hpp"
+#include "binary_reader.hpp"
 
-InputReader::InputReader(std::string fileName) :
+BinaryReader::BinaryReader(std::string fileName) :
     file{fileName, std::ios::binary | std::ios::in}, bitIndex{7} {
         file.get(currentChar);
     }
 
-InputReader::~InputReader() {
+BinaryReader::~BinaryReader() {
     file.close();
 }
 
-/* Returns whether InputReader got to the end of the file. */
-bool InputReader::end() {
+/* Returns whether BinaryReader got to the end of the file. */
+bool BinaryReader::end() {
     return file.eof();
 }
 
-void InputReader::readNextChar() {
+void BinaryReader::readNextChar() {
     bitIndex = 7;
     file.get(currentChar);
 }
 
 /* Returns 0 or 1 according to the next bit in the file. */
-int InputReader::nextBit() {
+int BinaryReader::read() {
     int bit = (currentChar >> bitIndex) & 1;
     bitIndex--;
 
