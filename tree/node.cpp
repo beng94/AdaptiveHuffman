@@ -25,13 +25,17 @@ bool Node::isLeftChild(Node* node) {
 }
 
 void Node::swap(Node* node) {
-    if(parent->isLeftChild(this)) {
+    // Nodes can have the same parent
+    bool leftOfParent = parent->isLeftChild(this);
+    bool leftOfNodeParent = node->parent->isLeftChild(node);
+
+    if(leftOfParent) {
         parent->left_child = node;
     } else {
         parent->right_child = node;
     }
 
-    if(node->parent->left_child == node) {
+    if(leftOfNodeParent) {
         node->parent->left_child = this;
     } else {
         node->parent->right_child = this;
