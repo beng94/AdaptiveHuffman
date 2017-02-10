@@ -1,3 +1,6 @@
+#ifndef HUFFMAN_HUFFMAN_ENCODER_H
+#define HUFFMAN_HUFFMAN_ENCODER_H
+
 #include "huffman.hpp"
 #include "../io/char_reader.hpp"
 #include "../io/binary_writer.hpp"
@@ -20,3 +23,5 @@ class HuffmanEncoder : public Huffman {
         void appendCharToCode(std::list<int>&, char);
 
 };
+
+#endif

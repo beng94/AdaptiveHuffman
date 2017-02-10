@@ -1,3 +1,6 @@
+#ifndef HUFFMAN_HUFFMAN_H
+#define HUFFMAN_HUFFMAN_H
+
 #include "../tree/binary_tree.hpp"
 
 class Huffman {
@@ -18,3 +21,5 @@ class Huffman {
         Node* getNytNode();
         Node* insertNewNode(char);
 };
+
+#endif
