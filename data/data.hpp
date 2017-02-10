@@ -4,5 +4,6 @@ class Data {
         int weight;
         char code;
 
+        Data();
         Data(int, char);
 };
