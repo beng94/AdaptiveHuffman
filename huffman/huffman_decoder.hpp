@@ -14,6 +14,10 @@ class HuffmanDecoder : public Huffman {
     private:
         BinaryReader binaryReader;
         CharWriter charWriter;
+
+        bool isNytNode(Node*);
+        Node* findNode();
+        void updateCodeTree(char);
 };
 
 #endif
