@@ -1,5 +1,7 @@
 #include "huffman.hpp"
 
+#include <iostream>
+
 Huffman::Huffman() :
     codeTree{}
 {}
@@ -31,6 +33,9 @@ Node* Huffman::findBlockLeader(int weight) {
 void Huffman::swapNodes(Node* a, Node* b) {
     Data& dataA = a->getData();
     Data& dataB = b->getData();
+
+    std::cout << "swap: " << dataA.order << ": '" << dataA.code << "' ";
+    std::cout << dataB.order << ": '" << dataB.code << "' ";
 
     int tmpOrder = dataA.order;
     dataA.order = dataB.order;
