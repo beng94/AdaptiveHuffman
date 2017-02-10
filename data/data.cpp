@@ -2,7 +2,7 @@
 
 
 Data::Data() :
-    order{512}
+    order{512}, code{0x0}, weight{0}
 {}
 
 Data::Data(int order, char code) :

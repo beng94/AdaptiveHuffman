@@ -3,6 +3,7 @@
 
 BinaryTree::BinaryTree()
 {
+    root = new Node();
     root = new Node;
 }
 
