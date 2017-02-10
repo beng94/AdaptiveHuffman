@@ -11,7 +11,9 @@ class Huffman {
     protected:
         BinaryTree codeTree;
 
-        Node* symbolReceived(char);
+        void updateCodeTree(char);
+        Node* findSymbolNode(char);
+        bool isNytNode(Node*);
 
     private:
         Node* findSymbol(char);

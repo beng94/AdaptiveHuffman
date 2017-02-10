@@ -43,7 +43,3 @@ Node* HuffmanDecoder::findNode() {
 
     return node;
 }
-
-void HuffmanDecoder::updateCodeTree(char c) {
-    symbolReceived(c);
-}

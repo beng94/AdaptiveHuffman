@@ -84,13 +84,24 @@ Node* Huffman::insertNewNode(char c) {
     return newSymbolNode;
 }
 
-Node* Huffman::symbolReceived(char c) {
+Node* Huffman::findSymbolNode(char c) {
     Node* symbolNode = findSymbol(c);
     if(!symbolNode) {
-        symbolNode = insertNewNode(c);
+        symbolNode = getNytNode();
     }
 
-    incrementNode(symbolNode);
-
     return symbolNode;
+}
+
+void Huffman::updateCodeTree(char c) {
+    Node* symbolNode = findSymbolNode(c);
+    if(isNytNode(symbolNode)) {
+        symbolNode = insertNewNode(c);
+    }
+    incrementNode(symbolNode);
+}
+
+bool Huffman::isNytNode(Node* node) {
+    return (node->getData().code == 0x0 &&
+            node->getLeftChild() == NULL);
 }

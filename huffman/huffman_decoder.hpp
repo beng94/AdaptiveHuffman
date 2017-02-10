@@ -17,7 +17,6 @@ class HuffmanDecoder : public Huffman {
 
         bool isNytNode(Node*);
         Node* findNode();
-        void updateCodeTree(char);
 };
 
 #endif
