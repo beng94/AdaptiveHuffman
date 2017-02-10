@@ -11,8 +11,12 @@ void HuffmanEncoder::encode() {
     char c;
     while((c = inputReader.read()) && c != EOF) {
         std::cout << c << " ";
-        Node* node = symbolReceived(c);
+        Node* node = findSymbolNode(c);
         std::list<int> huffmanCode = findRootPath(node);
+        if(isNytNode(node)) {
+            huffmanCode.push_back(1);
+        }
+        updateCodeTree(c);
 
         // This node got created recently
         if(node->getData().weight == 1) {
