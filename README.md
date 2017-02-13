@@ -1,8 +1,10 @@
 # AdaptiveHuffman
 This is a demo Adaptive Huffman encoder and decoder for educational puposes written in C++.
 
-Adaptive Huffman coding is an adaptive coding technique based on Huffman coding. It permits building the code as the symbols are being transmitted, having no initial knowledge of source distribution, that allows one-pass encoding and adaptation to changing conditions in data.
-The benefit of one-pass procedure is that the source can be encoded in real time.
+Adaptive Huffman coding is an adaptive coding technique based on Huffman coding. It permits building the code as the symbols are being transmitted, having no initial knowledge of source distribution, that allows one-pass encoding and adaptation to changing conditions in data. The benefit of one-pass procedure is that the source can be encoded in real time.
+
+# Peformance
+This implementation encodes a 7888 characters long text into 4448 bytes, which is about 56,8% compression ratio.
 
 # Usage
 - Compile the program using `make`. It will generate a binary in build/OUT.
