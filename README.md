@@ -29,7 +29,7 @@ decoded.txt:
 Hello world!
 ool
 ```
-The garbage at the end is due to the extra bits in the last byte, that is not used by the encoder.
+The garbage at the end is due to the extra bits in the last byte, that are not used by the encoder.
 
 
 # Reference
